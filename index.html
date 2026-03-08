@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SeLivre — Alfabetización digital y ciberseguridad: aprende a proteger tu vida digital con experiencias interactivas, vídeos y contenido transmedia.">
+  <title>SeLivre — Libertad a través de la seguridad</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- ═══ Navigation ═══ -->
+  <nav class="nav" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">{</span>SeLivre<span class="logo-bracket">}</span>
+        <span class="logo-dot"></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#videos">Vídeos</a></li>
+        <li><a href="#podcast">Podcast</a></li>
+        <li><a href="#simulator">Simulador</a></li>
+        <li><a href="#gallery">Galería</a></li>
+        <li><a href="#transmedia">Transmedia</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </nav>
+
+  <!-- ═══ Hero Section ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">Proyecto Transmedia · Alfabetización Digital</p>
+      <h1 class="hero-title">Se<span>Livre</span></h1>
+      <p class="hero-subtitle">Libertad a través de la seguridad</p>
+      <p class="hero-tagline">Acompaña a tu "yo digital" en un día cualquiera y descubre cómo pequeños descuidos pueden poner en riesgo tu vida online. Aprende a protegerte sin tecnicismos.</p>
+      <a href="#about" class="hero-cta">
+        Explorar el proyecto ↓
+      </a>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ About Section ═══ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <span class="section-label">Sobre el proyecto</span>
+          <h2 class="section-title">Tu vida digital,<br>bajo <span style="color: var(--accent-green)">tu control</span></h2>
+          <p class="section-desc">SeLivre nace como una propuesta transmedia de alfabetización digital que transforma la ciberseguridad en experiencias cercanas y cotidianas. No necesitas ser técnico: te mostramos con ejemplos narrativos las acciones rutinarias que, sin saberlo, se convierten en riesgos si no conoces las reglas del juego digital.</p>
+          <p class="section-desc" style="margin-top: 1rem;">Nuestra filosofía es simple: <strong style="color: var(--accent-green)">la seguridad no limita, libera.</strong> Cuando sabes protegerte, navegas con confianza.</p>
+          <div class="about-stats" style="margin-top: 2rem;">
+            <div class="stat-card reveal reveal-delay-1">
+              <span class="stat-number">2</span>
+              <span class="stat-label">Vídeos</span>
+            </div>
+            <div class="stat-card reveal reveal-delay-2">
+              <span class="stat-number">1</span>
+              <span class="stat-label">Podcast</span>
+            </div>
+            <div class="stat-card reveal reveal-delay-3">
+              <span class="stat-number">8+</span>
+              <span class="stat-label">Piezas RRSS</span>
+            </div>
+            <div class="stat-card reveal reveal-delay-4">
+              <span class="stat-number">∞</span>
+              <span class="stat-label">Interactividad</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal reveal-delay-2">
+          <div class="about-terminal">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">selivre@terminal:~</span>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">selivre</span> --analizar-riesgos</div>
+              <div class="terminal-line"><span class="str">✓</span> Contraseñas débiles detectadas: <span class="str">3</span></div>
+              <div class="terminal-line"><span class="str">✓</span> WiFi pública sin VPN: <span style="color: var(--accent-red)">⚠ riesgo alto</span></div>
+              <div class="terminal-line"><span class="str">✓</span> Permisos excesivos en apps: <span style="color: var(--accent-amber)">⚠ revisar</span></div>
+              <div class="terminal-line"><span class="str">✓</span> Autenticación 2FA: <span style="color: var(--accent-red)">✗ desactivada</span></div>
+              <div class="terminal-line">&nbsp;</div>
+              <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">selivre</span> --proteger</div>
+              <div class="terminal-line"><span class="str">→ Iniciando guía de protección...</span></div>
+              <div class="terminal-line"><span class="comment"># Tu seguridad empieza aquí</span><span class="terminal-cursor"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Videos Section ═══ -->
+  <section class="videos" id="videos">
+    <div class="container">
+      <span class="section-label reveal">Contenido audiovisual</span>
+      <h2 class="section-title reveal">Dos miradas,<br>una <span style="color: var(--accent-cyan)">realidad digital</span></h2>
+      <p class="section-desc reveal">Dos vídeos cortos que muestran tu día digital desde una perspectiva que no esperabas. El primero te acompaña; el segundo te alerta.</p>
+      
+      <div class="videos-grid">
+        <!-- Video 1 -->
+        <div class="video-card reveal reveal-delay-1">
+          <div class="video-placeholder">
+            <div class="play-button"></div>
+            <span class="video-duration">2:47</span>
+          </div>
+          <div class="video-info">
+            <span class="video-badge">Episodio 01</span>
+            <h3>Un día cualquiera</h3>
+            <p>La naturalidad de la navegación diaria: desbloquear el móvil, revisar el correo, conectarse a la WiFi del café, comprar algo online… Acciones inocentes que esconden más de lo que parece.</p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card reveal reveal-delay-2">
+          <div class="video-placeholder">
+            <div class="play-button"></div>
+            <span class="video-duration">2:55</span>
+          </div>
+          <div class="video-info">
+            <span class="video-badge" style="color: var(--accent-red); border-color: rgba(255,51,102,0.2); background: var(--accent-red-glow);">Episodio 02</span>
+            <h3>Lo que no ves</h3>
+            <p>El mismo día, la otra cara. Cada punto crítico señalado: la WiFi abierta que intercepta datos, el enlace sospechoso en el correo, los permisos de la app que acabas de instalar. El revelador.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Podcast Section ═══ -->
+  <section class="podcast" id="podcast">
+    <div class="container">
+      <span class="section-label reveal">Audio · Mini-documental</span>
+      <h2 class="section-title reveal">La huella que<br><span style="color: var(--accent-cyan)">no puedes borrar</span></h2>
+      <p class="section-desc reveal">Un podcast formato mini-documental que profundiza en la huella digital invisible a través de casos reales anónimos. ¿Cuánto sabe internet sobre ti?</p>
+      
+      <div class="podcast-player reveal">
+        <div class="podcast-artwork">
+          <span class="podcast-artwork-icon">🎧</span>
+        </div>
+        <div class="podcast-details">
+          <h3>Tu sombra digital</h3>
+          <div class="podcast-meta">
+            <span>🕐 05:23</span>
+            <span>📅 Temporada 1 · Ep. 1</span>
+            <span>🎙️ SeLivre Podcast</span>
+          </div>
+          <p class="podcast-description">Tres personas. Tres historias anónimas. Todas pensaban que "no tenían nada que ocultar" — hasta que descubrieron lo que internet ya sabía de ellas. Un recorrido por la huella digital que dejamos sin saberlo, con una reflexión final para que evalúes tu propio nivel de conciencia en la red.</p>
+          <div class="audio-player">
+            <button class="audio-play-btn" id="podcastPlayBtn" aria-label="Reproducir podcast">▶</button>
+            <div class="audio-waveform" id="audioWaveform">
+              <!-- Waveform bars generated by JS -->
+            </div>
+            <span class="audio-time">0:00 / 5:23</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Interactive Simulator ═══ -->
+  <section class="simulator" id="simulator">
+    <div class="container">
+      <span class="section-label reveal">Recurso interactivo</span>
+      <h2 class="section-title reveal">Simulador de<br><span style="color: var(--accent-red)">detección de phishing</span></h2>
+      <div class="simulator-intro reveal">
+        <p class="section-desc">Pon a prueba tu capacidad para distinguir correos legítimos de intentos de phishing. Analiza cada mensaje, fíjate en los detalles y decide: ¿es seguro o es una trampa?</p>
+      </div>
+      
+      <div class="simulator-container reveal">
+        <div class="simulator-header">
+          <div class="simulator-title-bar">
+            <span class="inbox-icon">📥</span>
+            Bandeja de entrada
+          </div>
+          <div class="simulator-score">
+            Puntuación: <span class="score-badge" id="simScore">0 / 6</span>
+          </div>
+        </div>
+        
+        <ul class="email-list" id="emailList">
+          <!-- Emails generated by JS -->
+        </ul>
+        
+        <div class="simulator-results" id="simResults">
+          <div class="result-score" id="resultScore">0/6</div>
+          <p class="result-message" id="resultMessage"></p>
+          <div class="result-details">
+            <div class="result-stat">
+              <span class="result-stat-val green" id="resultCorrect">0</span>
+              <span class="result-stat-label">Correctas</span>
+            </div>
+            <div class="result-stat">
+              <span class="result-stat-val red" id="resultWrong">0</span>
+              <span class="result-stat-label">Incorrectas</span>
+            </div>
+          </div>
+          <button class="btn-reset" id="simResetBtn">↻ Reintentar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Gallery Section ═══ -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <span class="section-label reveal">Galería multimedia</span>
+      <h2 class="section-title reveal">Detrás de<br><span style="color: var(--accent-green)">las cámaras</span></h2>
+      <p class="section-desc reveal">Fotos del proceso, mini-entrevistas con el equipo, y momentos del making-of que dan vida a SeLivre.</p>
+      
+      <div class="gallery-grid reveal">
+        <div class="gallery-item tall">
+          <div class="gallery-image">
+            <span class="gallery-placeholder-icon">📸</span>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-tag">Making Of</span>
+            <h4>Rodaje del Episodio 01</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <span class="gallery-placeholder-icon">🎤</span>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-tag">Entrevista</span>
+            <h4>Charla con experto en ciberseguridad</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <span class="gallery-placeholder-icon">💻</span>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-tag">Proceso</span>
+            <h4>Diseñando la experiencia interactiva</h4>
+          </div>
+        </div>
+        <div class="gallery-item wide">
+          <div class="gallery-image">
+            <span class="gallery-placeholder-icon">🎬</span>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-tag">Making Of</span>
+            <h4>El equipo SeLivre en acción</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <span class="gallery-placeholder-icon">🔐</span>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-tag">Foto</span>
+            <h4>Escena clave: la contraseña</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <span class="gallery-placeholder-icon">🎤</span>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-tag">Entrevista</span>
+            <h4>Estudiantes opinan sobre privacidad</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <span class="gallery-placeholder-icon">📱</span>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-tag">Making Of</span>
+            <h4>Grabación de contenido para RRSS</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <span class="gallery-placeholder-icon">🎧</span>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-tag">Proceso</span>
+            <h4>Sesión de grabación del podcast</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Transmedia Section ═══ -->
+  <section class="transmedia" id="transmedia">
+    <div class="container">
+      <span class="section-label reveal">Extensión transmedia</span>
+      <h2 class="section-title reveal">Más allá de<br><span style="color: var(--accent-green)">la web</span></h2>
+      <p class="section-desc reveal">La narrativa de SeLivre se expande hacia las redes sociales, traduciendo la ciberseguridad al lenguaje de las tendencias, clips rápidos y contenido visual de impacto.</p>
+      
+      <!-- Platform Cards -->
+      <div class="transmedia-platforms">
+        <div class="platform-card tiktok reveal reveal-delay-1">
+          <span class="platform-icon">🎵</span>
+          <h3>TikTok</h3>
+          <p>Conceptos de seguridad informática traducidos al lenguaje de tendencias. Clips rápidos, ganchos visuales y contenido que se queda contigo.</p>
+          <ul class="platform-strategy">
+            <li>Duetos con "red flags" digitales</li>
+            <li>Trend hijacking con mensajes de seguridad</li>
+            <li>POVs narrativos: "Cuando abres ese link sospechoso…"</li>
+            <li>Tips express de ciberseguridad en 30s</li>
+          </ul>
+        </div>
+        <div class="platform-card instagram reveal reveal-delay-2">
+          <span class="platform-icon">📷</span>
+          <h3>Instagram</h3>
+          <p>Contenido educativo y estético que refuerza los conceptos de la web. Carruseles, stories interactivas y reels con datos que impactan.</p>
+          <ul class="platform-strategy">
+            <li>Carruseles infográficos sobre huella digital</li>
+            <li>Stories con encuestas y quizzes de seguridad</li>
+            <li>Reels Behind-The-Scenes del proyecto</li>
+            <li>Colaboraciones con cuentas tech</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 8 Content Pieces -->
+      <h3 class="transmedia-content-heading reveal">
+        <span style="color: var(--accent-cyan)">8 piezas</span> de contenido social
+      </h3>
+      
+      <div class="content-grid">
+        <div class="content-piece reveal reveal-delay-1">
+          <div class="content-preview">
+            <span class="content-type-badge reel">Reel</span>
+            <span class="content-preview-icon">🎬</span>
+            <span class="content-caption">"Tu contraseña '1234' en 0.3 segundos"</span>
+          </div>
+        </div>
+        <div class="content-piece reveal reveal-delay-1">
+          <div class="content-preview">
+            <span class="content-type-badge story">Story</span>
+            <span class="content-preview-icon">📊</span>
+            <span class="content-caption">Encuesta: ¿Cambias tus contraseñas?</span>
+          </div>
+        </div>
+        <div class="content-piece reveal reveal-delay-2">
+          <div class="content-preview">
+            <span class="content-type-badge carousel-badge">Carrusel</span>
+            <span class="content-preview-icon">📱</span>
+            <span class="content-caption">5 señales de un email phishing</span>
+          </div>
+        </div>
+        <div class="content-piece reveal reveal-delay-2">
+          <div class="content-preview">
+            <span class="content-type-badge reel">Reel</span>
+            <span class="content-preview-icon">🎭</span>
+            <span class="content-caption">POV: Conectas a WiFi en el aeropuerto</span>
+          </div>
+        </div>
+        <div class="content-piece reveal reveal-delay-3">
+          <div class="content-preview">
+            <span class="content-type-badge post">Post</span>
+            <span class="content-preview-icon">🔒</span>
+            <span class="content-caption">Infografía: ¿Qué es la 2FA?</span>
+          </div>
+        </div>
+        <div class="content-piece reveal reveal-delay-3">
+          <div class="content-preview">
+            <span class="content-type-badge story">Story</span>
+            <span class="content-preview-icon">🧪</span>
+            <span class="content-caption">Quiz: ¿Sabrías detectar el fraude?</span>
+          </div>
+        </div>
+        <div class="content-piece reveal reveal-delay-4">
+          <div class="content-preview">
+            <span class="content-type-badge reel">Reel</span>
+            <span class="content-preview-icon">📦</span>
+            <span class="content-caption">Unboxing: Lo que sabe Google de ti</span>
+          </div>
+        </div>
+        <div class="content-piece reveal reveal-delay-4">
+          <div class="content-preview">
+            <span class="content-type-badge carousel-badge">Carrusel</span>
+            <span class="content-preview-icon">🛡️</span>
+            <span class="content-caption">Guía rápida: Protege tu móvil en 5 min</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Participation Mechanic -->
+      <div class="participation reveal">
+        <div class="participation-header">
+          <span class="section-label" style="justify-content: center;">Mecánica de participación</span>
+          <h3>¿Sabrías detectar el phishing?</h3>
+          <p>Un reto rápido de 5 preguntas diseñado para compartir en redes. Pon a prueba tus conocimientos y desafía a tus amigos.</p>
+        </div>
+        
+        <div class="quiz-container" id="quizContainer">
+          <div class="quiz-progress" id="quizProgress">
+            <div class="quiz-progress-dot current"></div>
+            <div class="quiz-progress-dot"></div>
+            <div class="quiz-progress-dot"></div>
+            <div class="quiz-progress-dot"></div>
+            <div class="quiz-progress-dot"></div>
+          </div>
+          
+          <div id="quizQuestions">
+            <!-- Questions generated by JS -->
+          </div>
+          
+          <div class="quiz-results" id="quizResults">
+            <div class="quiz-results-score" id="quizScore">0/5</div>
+            <p class="quiz-results-msg" id="quizMsg"></p>
+            <p class="quiz-results-share">📲 ¡Haz captura y comparte tu resultado en Instagram o TikTok con #SeLivreChallenge!</p>
+            <div class="quiz-results-btns">
+              <button class="btn-reset" id="quizResetBtn">↻ Reintentar</button>
+              <button class="hero-cta" style="opacity:1; animation:none; font-size:0.8rem; padding: 10px 20px;" onclick="window.open('https://twitter.com/intent/tweet?text=He%20conseguido%20' + document.getElementById('quizScore').textContent + '%20en%20el%20reto%20%23SeLivreChallenge%20%F0%9F%9B%A1%EF%B8%8F%20%C2%BFTe%20atreves%3F','_blank')">Compartir resultado</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4><span style="color: var(--accent-green)">{</span>SeLivre<span style="color: var(--accent-green)">}</span></h4>
+          <p>Un proyecto transmedia de alfabetización digital. Porque la seguridad no limita, libera. Creado como proyecto universitario para demostrar que la ciberseguridad puede ser cercana, narrativa y participativa.</p>
+        </div>
+        <div class="footer-links">
+          <h5>Secciones</h5>
+          <ul>
+            <li><a href="#about">Sobre el proyecto</a></li>
+            <li><a href="#videos">Vídeos</a></li>
+            <li><a href="#podcast">Podcast</a></li>
+            <li><a href="#simulator">Simulador</a></li>
+            <li><a href="#gallery">Galería</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Redes Sociales</h5>
+          <ul>
+            <li><a href="#" target="_blank">TikTok @selivre</a></li>
+            <li><a href="#" target="_blank">Instagram @selivre</a></li>
+            <li><a href="#transmedia">Extensión transmedia</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 SeLivre · Proyecto universitario de contenido transmedia</p>
+        <p>Hecho con 🛡️ y mucho ☕</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
