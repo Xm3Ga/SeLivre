@@ -1,468 +1,596 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SeLivre — Alfabetización digital y ciberseguridad: aprende a proteger tu vida digital con experiencias interactivas, vídeos y contenido transmedia.">
-  <title>SeLivre — Libertad a través de la seguridad</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="SeLivre: Alfabetización digital y ciberseguridad: aprende a proteger tu vida digital con experiencias interactivas, vídeos y contenido transmedia."/>
+<title>SeLivre: Proyecto Transmedia de Alfabetización Digital</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+<!-- Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- Styles -->
+<link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-  <!-- ═══ Navigation ═══ -->
-  <nav class="nav" id="navbar">
-    <div class="container">
-      <a href="#hero" class="nav-logo">
-        <span class="logo-bracket">{</span>SeLivre<span class="logo-bracket">}</span>
-        <span class="logo-dot"></span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#videos">Vídeos</a></li>
-        <li><a href="#podcast">Podcast</a></li>
-        <li><a href="#simulator">Simulador</a></li>
-        <li><a href="#gallery">Galería</a></li>
-        <li><a href="#transmedia">Transmedia</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
-    </div>
-  </nav>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
 
-  <!-- ═══ Hero Section ═══ -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="hero-grid"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-tag">Proyecto Transmedia · Alfabetización Digital</p>
-      <h1 class="hero-title">Se<span>Livre</span></h1>
-      <p class="hero-subtitle">Libertad a través de la seguridad</p>
-      <p class="hero-tagline">Acompaña a tu "yo digital" en un día cualquiera y descubre cómo pequeños descuidos pueden poner en riesgo tu vida online. Aprende a protegerte sin tecnicismos.</p>
-      <a href="#about" class="hero-cta">
-        Explorar el proyecto ↓
-      </a>
-    </div>
-    <div class="hero-scroll-indicator">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
+<!-- ═══ Navigation ═══ -->
+<nav class="nav" id="navbar">
+  <div class="container">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-bracket">{</span>SeLivre<span class="logo-bracket">}</span>
+      <span class="logo-dot"></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#que-es">Aprender</a></li>
+      <li><a href="#podcast">Escuchar</a></li>
+      <li><a href="#senales">Señales</a></li>
+      <li><a href="#quiz">Test</a></li>
+      <li><a href="#gallery">Galería</a></li>
+      <li><a href="#emergencia" class="nav-cta">Fui estafado</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+  </div>
+</nav>
 
-  <!-- ═══ About Section ═══ -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <span class="section-label">Sobre el proyecto</span>
-          <h2 class="section-title">Tu vida digital,<br>bajo <span style="color: var(--accent-green)">tu control</span></h2>
-          <p class="section-desc">SeLivre nace como una propuesta transmedia de alfabetización digital que transforma la ciberseguridad en experiencias cercanas y cotidianas. No necesitas ser técnico: te mostramos con ejemplos narrativos las acciones rutinarias que, sin saberlo, se convierten en riesgos si no conoces las reglas del juego digital.</p>
-          <p class="section-desc" style="margin-top: 1rem;">Nuestra filosofía es simple: <strong style="color: var(--accent-green)">la seguridad no limita, libera.</strong> Cuando sabes protegerte, navegas con confianza.</p>
-          <div class="about-stats" style="margin-top: 2rem;">
-            <div class="stat-card reveal reveal-delay-1">
-              <span class="stat-number">2</span>
-              <span class="stat-label">Vídeos</span>
-            </div>
-            <div class="stat-card reveal reveal-delay-2">
-              <span class="stat-number">1</span>
-              <span class="stat-label">Podcast</span>
-            </div>
-            <div class="stat-card reveal reveal-delay-3">
-              <span class="stat-number">8+</span>
-              <span class="stat-label">Piezas RRSS</span>
-            </div>
-            <div class="stat-card reveal reveal-delay-4">
-              <span class="stat-number">∞</span>
-              <span class="stat-label">Interactividad</span>
-            </div>
+<!-- ═══ Hero ═══ -->
+<section id="hero">
+  <div class="hero-canvas">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-radial"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">SeLivre: Proyecto Transmedia<span></span></div>
+      <h1 class="hero-title">
+        <span class="word-wrap"><span class="word">No seas</span></span>
+        <span class="word-wrap"><span class="word">la próxima</span></span>
+        <span class="word-wrap"><span class="word"><span class="danger"><em>víctima</em></span></span></span>
+      </h1>
+      <p class="hero-desc">
+        Acompaña a tu "yo digital" y descubre cómo pequeños descuidos ponen en riesgo tu vida online. Aprende a protegerte sin tecnicismos, porque la seguridad no limita, libera.
+      </p>
+      <div class="hero-btns">
+        <a href="#que-es" class="btn-main">Explorar el proyecto →</a>
+        <a href="#quiz" class="btn-outline">▷ Hacer el test</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ¿Qué es el phishing? ═══ -->
+<section id="que-es">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal-left">
+        <span class="chip">Los Fundamentos</span>
+        <h2 class="section-title">¿Qué es el <em>phishing</em>?</h2>
+        <p class="body-text">El phishing es un tipo de engaño digital donde criminales se hacen pasar por organizaciones de confianza (bancos, empresas tecnológicas, organismos gubernamentales) para hacerte revelar información sensible.</p>
+        <p class="body-text">El nombre viene de "pescar": los atacantes lanzan una amplia red de correos falsos, mensajes y webs esperando que alguien muerda el anzuelo. Y funciona con mucha más frecuencia de lo que imaginas.</p>
+      </div>
+      <div>
+        <div class="info-card reveal-right" style="transition-delay:0.05s">
+          <div class="info-icon">📧</div>
+          <div>
+            <div class="card-title">Phishing por Email</div>
+            <div class="card-desc">La forma más común. Correos falsos de marcas conocidas que te piden "verificar" tu cuenta o hacer clic en un enlace de forma urgente.</div>
           </div>
         </div>
-        <div class="about-visual reveal reveal-delay-2">
-          <div class="about-terminal">
-            <div class="terminal-header">
-              <span class="terminal-dot red"></span>
-              <span class="terminal-dot yellow"></span>
-              <span class="terminal-dot green"></span>
-              <span class="terminal-title">selivre@terminal:~</span>
-            </div>
-            <div class="terminal-body">
-              <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">selivre</span> --analizar-riesgos</div>
-              <div class="terminal-line"><span class="str">✓</span> Contraseñas débiles detectadas: <span class="str">3</span></div>
-              <div class="terminal-line"><span class="str">✓</span> WiFi pública sin VPN: <span style="color: var(--accent-red)">⚠ riesgo alto</span></div>
-              <div class="terminal-line"><span class="str">✓</span> Permisos excesivos en apps: <span style="color: var(--accent-amber)">⚠ revisar</span></div>
-              <div class="terminal-line"><span class="str">✓</span> Autenticación 2FA: <span style="color: var(--accent-red)">✗ desactivada</span></div>
-              <div class="terminal-line">&nbsp;</div>
-              <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">selivre</span> --proteger</div>
-              <div class="terminal-line"><span class="str">→ Iniciando guía de protección...</span></div>
-              <div class="terminal-line"><span class="comment"># Tu seguridad empieza aquí</span><span class="terminal-cursor"></span></div>
-            </div>
+        <div class="info-card reveal-right" style="transition-delay:0.1s">
+          <div class="info-icon">📱</div>
+          <div>
+            <div class="card-title">Smishing (SMS)</div>
+            <div class="card-desc">Mensajes de texto que afirman que tu paquete está retenido, debes una multa, o tu cuenta bancaria está bloqueada, con un enlace sospechoso.</div>
+          </div>
+        </div>
+        <div class="info-card reveal-right" style="transition-delay:0.15s">
+          <div class="info-icon">📞</div>
+          <div>
+            <div class="card-title">Vishing (Teléfono)</div>
+            <div class="card-desc">Llamadas de "soporte técnico", "Hacienda" o "tu banco" que te presionan para actuar de inmediato.</div>
+          </div>
+        </div>
+        <div class="info-card reveal-right" style="transition-delay:0.2s">
+          <div class="info-icon">🎯</div>
+          <div>
+            <div class="card-title">Spear Phishing</div>
+            <div class="card-desc">Ataques muy dirigidos usando información personal recopilada sobre ti, mucho más convincentes que los mensajes genéricos.</div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ Videos Section ═══ -->
-  <section class="videos" id="videos">
-    <div class="container">
-      <span class="section-label reveal">Contenido audiovisual</span>
-      <h2 class="section-title reveal">Dos miradas,<br>una <span style="color: var(--accent-cyan)">realidad digital</span></h2>
-      <p class="section-desc reveal">Dos vídeos cortos que muestran tu día digital desde una perspectiva que no esperabas. El primero te acompaña; el segundo te alerta.</p>
-      
-      <div class="videos-grid">
-        <!-- Video 1 -->
-        <div class="video-card reveal reveal-delay-1">
-          <div class="video-placeholder">
-            <div class="play-button"></div>
-            <span class="video-duration">2:47</span>
-          </div>
-          <div class="video-info">
-            <span class="video-badge">Episodio 01</span>
-            <h3>Un día cualquiera</h3>
-            <p>La naturalidad de la navegación diaria: desbloquear el móvil, revisar el correo, conectarse a la WiFi del café, comprar algo online… Acciones inocentes que esconden más de lo que parece.</p>
-          </div>
+<!-- ═══ Vídeo 1 ═══ -->
+<section class="video-section" style="padding-top:0">
+  <div class="container">
+    <div class="reveal-skew">
+      <span style="font-family:var(--ff-mono);font-size:0.67rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent3)">📽 Vídeo · Episodio 01</span>
+      <h2 class="section-title" style="font-size:2rem;margin:0.5rem 0 1.5rem">Cómo funcionan realmente los <em>ataques de phishing</em></h2>
+    </div>
+    <div class="video-wrapper reveal-scale" onclick="openModal('v1')">
+      <div class="video-inner">
+        <div class="vbg"></div><div class="vgrid"></div>
+        <div class="play-orb">▶</div>
+        <div class="v-title">Cómo funciona un ataque phishing paso a paso</div>
+        <div class="v-sub">🔒 Fundamentos de ciberseguridad · 2 min</div>
+      </div>
+    </div>
+    <div class="v-meta">
+      <span class="v-tag" style="background:rgba(61,245,193,0.08);color:var(--accent)">Email Spoofing</span>
+      <span class="v-tag" style="background:rgba(139,92,246,0.08);color:var(--accent3)">Páginas falsas</span>
+      <span class="v-tag" style="background:rgba(255,69,102,0.08);color:var(--accent2)">Robo de credenciales</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Vídeo 2 ═══ -->
+<section class="video-section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
+      <div class="reveal-left">
+        <span style="font-family:var(--ff-mono);font-size:0.67rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent2)">📽 Vídeo · Episodio 02</span>
+        <h2 class="section-title" style="font-size:2rem;margin:0.5rem 0 1rem">Casos reales de <span class="red">estafas</span></h2>
+        <p class="body-text">Ejemplos reales de ataques de phishing y cómo sus víctimas cayeron. Entender ataques pasados es la mejor forma de evitar los futuros.</p>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.2rem">
+          <span style="font-family:var(--ff-mono);font-size:0.67rem;background:rgba(255,69,102,0.1);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:3px">Fraude Empresarial</span>
+          <span style="font-family:var(--ff-mono);font-size:0.67rem;background:rgba(61,245,193,0.08);color:var(--accent);padding:0.3rem 0.8rem;border-radius:3px">Ingeniería Social</span>
+          <span style="font-family:var(--ff-mono);font-size:0.67rem;background:rgba(139,92,246,0.1);color:var(--accent3);padding:0.3rem 0.8rem;border-radius:3px">Robo de Cuentas</span>
         </div>
-
-        <!-- Video 2 -->
-        <div class="video-card reveal reveal-delay-2">
-          <div class="video-placeholder">
-            <div class="play-button"></div>
-            <span class="video-duration">2:55</span>
-          </div>
-          <div class="video-info">
-            <span class="video-badge" style="color: var(--accent-red); border-color: rgba(255,51,102,0.2); background: var(--accent-red-glow);">Episodio 02</span>
-            <h3>Lo que no ves</h3>
-            <p>El mismo día, la otra cara. Cada punto crítico señalado: la WiFi abierta que intercepta datos, el enlace sospechoso en el correo, los permisos de la app que acabas de instalar. El revelador.</p>
+      </div>
+      <div class="reveal-right">
+        <div class="video-wrapper" onclick="openModal('v2')" style="border-left:3px solid var(--accent2)">
+          <div class="video-inner">
+            <div class="vbg"></div><div class="vgrid"></div>
+            <div class="play-orb" style="background:var(--accent2);box-shadow:0 0 50px rgba(255,69,102,0.4)">▶</div>
+            <div class="v-title">Estafas reales: cómo engañaron a personas como tú</div>
+            <div class="v-sub" style="color:var(--accent2)">⚠ Casos documentados · 3 min</div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ Podcast Section ═══ -->
-  <section class="podcast" id="podcast">
-    <div class="container">
-      <span class="section-label reveal">Audio · Mini-documental</span>
-      <h2 class="section-title reveal">La huella que<br><span style="color: var(--accent-cyan)">no puedes borrar</span></h2>
-      <p class="section-desc reveal">Un podcast formato mini-documental que profundiza en la huella digital invisible a través de casos reales anónimos. ¿Cuánto sabe internet sobre ti?</p>
-      
-      <div class="podcast-player reveal">
-        <div class="podcast-artwork">
-          <span class="podcast-artwork-icon">🎧</span>
+<!-- ═══ Podcast ═══ -->
+<section id="podcast">
+  <div class="container">
+    <div class="podcast-wrap">
+      <div class="podcast-art reveal-scale">
+        <div class="pa-icon">🎧</div>
+        <div class="pa-label">SeLivre<br>Podcast</div>
+        <div class="eq-bars" id="eqBars">
+          <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+          <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+          <div class="eq-bar"></div>
         </div>
-        <div class="podcast-details">
-          <h3>Tu sombra digital</h3>
-          <div class="podcast-meta">
-            <span>🕐 05:23</span>
-            <span>📅 Temporada 1 · Ep. 1</span>
-            <span>🎙️ SeLivre Podcast</span>
-          </div>
-          <p class="podcast-description">Tres personas. Tres historias anónimas. Todas pensaban que "no tenían nada que ocultar" — hasta que descubrieron lo que internet ya sabía de ellas. Un recorrido por la huella digital que dejamos sin saberlo, con una reflexión final para que evalúes tu propio nivel de conciencia en la red.</p>
-          <div class="audio-player">
-            <button class="audio-play-btn" id="podcastPlayBtn" aria-label="Reproducir podcast">▶</button>
-            <div class="audio-waveform" id="audioWaveform">
-              <!-- Waveform bars generated by JS -->
+      </div>
+      <div>
+        <span class="podcast-badge">Nuevo episodio</span>
+        <h3 class="podcast-title">"Tu sombra digital:<br>lo que internet sabe de ti"</h3>
+        <p class="podcast-sub">Tres personas. Tres historias anónimas. Todas pensaban que "no tenían nada que ocultar" , hasta que descubrieron lo que internet ya sabía de ellas. Un recorrido por la huella digital que dejamos sin saberlo.</p>
+        <div class="player">
+          <div class="player-row1">
+            <button class="skip-b" onclick="skipBack()">⏮</button>
+            <button class="play-btn-main" id="playPauseBtn" onclick="togglePlay()">▶</button>
+            <button class="skip-b" onclick="skipFwd()">⏭</button>
+            <div class="player-info">
+              <div class="player-track">Tu sombra digital</div>
+              <div class="player-ep">SELIVRE PODCAST · 2 MIN</div>
             </div>
-            <span class="audio-time">0:00 / 5:23</span>
           </div>
+          <div class="progress-wrap">
+            <input type="range" class="prog" id="prog" min="0" max="100" value="0" oninput="seekAudio(this.value)"/>
+            <div class="time-row"><span id="curTime">0:00</span><span>1:23</span></div>
+          </div>
+          <div class="vol-row">
+            <span class="vol-icon">🔈</span>
+            <input type="range" class="vol" min="0" max="100" value="75" oninput="setVol(this.value)"/>
+            <button class="speed-btn" id="speedBtn" onclick="cycleSpeed()">1×</button>
+          </div>
+        </div>
+        <p class="podcast-note">⚙ Sustituye el src del elemento &lt;audio&gt; con la URL de tu archivo de podcast</p>
+        <audio id="mainAudio" style="display:none"><source src="podcast.mp3" type="audio/mpeg"/></audio>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Señales de Alerta ═══ -->
+<section id="senales">
+  <div class="container">
+    <div class="reveal-blur" style="text-align:center;max-width:600px;margin:0 auto 1rem">
+      <span class="chip">Señales de Alarma</span>
+      <h2 class="section-title">Banderas rojas en cada correo de <span class="red">phishing</span></h2>
+    </div>
+    <div class="flags-layout">
+      <div>
+        <p class="body-text" style="margin-bottom:2rem">Incluso los correos phishing más sofisticados dejan huellas. Aprende a detectar estas señales habituales antes de hacer clic en nada.</p>
+        <div class="flag-list">
+          <div class="flag-item reveal-left">
+            <div class="flag-num">01</div>
+            <div>
+              <div class="flag-title">Remitente sospechoso</div>
+              <div class="flag-desc">El nombre parece real ("Seguridad BBVA") pero el correo real viene de un dominio aleatorio como alerts@n0tbbva-security123.xyz</div>
+            </div>
+          </div>
+          <div class="flag-item reveal-left" style="transition-delay:0.05s">
+            <div class="flag-num">02</div>
+            <div>
+              <div class="flag-title">Urgencia y tácticas de miedo</div>
+              <div class="flag-desc">"Tu cuenta se eliminará permanentemente en 24 horas". La urgencia artificial está diseñada para desactivar tu pensamiento crítico.</div>
+            </div>
+          </div>
+          <div class="flag-item reveal-left" style="transition-delay:0.1s">
+            <div class="flag-num">03</div>
+            <div>
+              <div class="flag-title">Saludo genérico</div>
+              <div class="flag-desc">"Estimado cliente" en lugar de tu nombre, las empresas reales con las que tienes cuenta normalmente saben quién eres.</div>
+            </div>
+          </div>
+          <div class="flag-item reveal-left" style="transition-delay:0.15s">
+            <div class="flag-num">04</div>
+            <div>
+              <div class="flag-title">Enlaces sospechosos</div>
+              <div class="flag-desc">Pasa el ratón antes de hacer clic. La URL visible puede decir "paypal.es" pero el enlace real lleva a otro lugar completamente diferente.</div>
+            </div>
+          </div>
+          <div class="flag-item reveal-left" style="transition-delay:0.2s">
+            <div class="flag-num">05</div>
+            <div>
+              <div class="flag-title">Petición de datos sensibles</div>
+              <div class="flag-desc">Ninguna empresa legítima pedirá tu contraseña, número de tarjeta completo o DNI por correo electrónico.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="email-mock reveal-right">
+        <div class="email-chrome">
+          <div class="em-dot r"></div><div class="em-dot y"></div><div class="em-dot g"></div>
+          <div class="email-subject-bar">⚠ URGENTE: Verifica tu cuenta inmediatamente</div>
+        </div>
+        <div class="email-body">
+          <div class="email-from-row">
+            <div class="email-avatar">🏦</div>
+            <div>
+              <div class="email-from-name">Seguridad BBVA</div>
+              <div class="email-from-addr">alerts@n0tbbva-security123.xyz ⚠</div>
+            </div>
+          </div>
+          <div class="email-content">
+            <p class="em-hl">Estimado <span class="em-flag">cliente valioso</span>,</p><br>
+            <p>Hemos detectado <span class="em-flag">actividad sospechosa</span> en su cuenta. Su cuenta será <strong>suspendida permanentemente en 24 horas</strong> si no verifica su identidad de inmediato.</p><br>
+            <p>Haga clic en el botón a continuación para verificar su cuenta y <span class="em-flag">evitar la eliminación permanente</span>.</p>
+            <a href="#" class="email-cta" onclick="return false">🔒 Verificar Mi Cuenta Ahora</a>
+          </div>
+        </div>
+        <div class="email-flags-panel">
+          <div class="efp-title">⚠ Señales de alerta detectadas</div>
+          <div class="efp-item">El dominio del remitente no es el de BBVA real</div>
+          <div class="efp-item">"Estimado cliente". No usa tu nombre real</div>
+          <div class="efp-item">Crea urgencia artificial (plazo de 24 horas)</div>
+          <div class="efp-item">Amenaza de eliminar la cuenta para provocar pánico</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ Interactive Simulator ═══ -->
-  <section class="simulator" id="simulator">
-    <div class="container">
-      <span class="section-label reveal">Recurso interactivo</span>
-      <h2 class="section-title reveal">Simulador de<br><span style="color: var(--accent-red)">detección de phishing</span></h2>
-      <div class="simulator-intro reveal">
-        <p class="section-desc">Pon a prueba tu capacidad para distinguir correos legítimos de intentos de phishing. Analiza cada mensaje, fíjate en los detalles y decide: ¿es seguro o es una trampa?</p>
+<!-- ═══ Quiz Interactivo ═══ -->
+<section id="quiz">
+  <div class="container">
+    <div class="quiz-hdr reveal-up">
+      <span class="chip">Recurso Interactivo</span>
+      <h2 class="section-title">¿Eres capaz de detectar la <em>estafa</em>?</h2>
+      <p class="body-text" style="max-width:460px;margin:0 auto;text-align:center">Pon a prueba tus conocimientos. Lee cada escenario y decide, ¿real o estafa? Obtendrás respuesta y explicación al instante.</p>
+    </div>
+    <div class="quiz-shell reveal-scale" id="quizShell">
+      <div class="qprog-bar"><div class="qprog-fill" id="qpFill" style="width:0%"></div></div>
+      <div class="quiz-top-bar">
+        <span class="q-counter" id="qCounter">Pregunta 1 de 8</span>
+        <span class="q-score" id="qScore">Puntuación: 0</span>
       </div>
-      
-      <div class="simulator-container reveal">
-        <div class="simulator-header">
-          <div class="simulator-title-bar">
-            <span class="inbox-icon">📥</span>
-            Bandeja de entrada
-          </div>
-          <div class="simulator-score">
-            Puntuación: <span class="score-badge" id="simScore">0 / 6</span>
-          </div>
+      <div class="quiz-body" id="quizBody">
+        <div class="q-type-tag" id="qTypeTag">Cargando...</div>
+        <h3 class="q-question" id="qQuestion"></h3>
+        <div id="qMock"></div>
+        <div class="q-options" id="qOptions"></div>
+        <div class="q-feedback" id="qFeedback"></div>
+      </div>
+      <div class="quiz-footer">
+        <button class="q-next" id="qNext" onclick="nextQ()">Siguiente pregunta →</button>
+      </div>
+      <div class="quiz-results" id="quizResults">
+        <div class="res-ring" id="resRing">
+          <svg viewBox="0 0 130 130" width="130" height="130">
+            <circle class="rb" cx="65" cy="65" r="58"/>
+            <circle class="rf" id="resFill" cx="65" cy="65" r="58" stroke-dasharray="364.4" stroke-dashoffset="364.4"/>
+          </svg>
+          <span class="res-num" id="resNum">0</span>
+          <span class="res-of">/ 8</span>
         </div>
-        
-        <ul class="email-list" id="emailList">
-          <!-- Emails generated by JS -->
+        <h3 class="res-title" id="resTitle"></h3>
+        <p class="res-msg" id="resMsg"></p>
+        <div class="res-badges" id="resBadges"></div>
+        <button class="restart-btn" onclick="restartQuiz()">↺ Intentar de nuevo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Galería Multimedia ═══ -->
+<section id="gallery">
+  <div class="container">
+    <div class="reveal-blur" style="max-width:600px">
+      <span class="chip">Galería Multimedia</span>
+      <h2 class="section-title">Detrás de <em>las cámaras</em></h2>
+      <p class="body-text">Fotos del proceso, mini-entrevistas con el equipo y momentos del making-of que dan vida a SeLivre.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall reveal-up" style="transition-delay:0s">
+        <div class="gallery-image"><span class="gallery-placeholder-icon">📸</span></div>
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-tag">Making Of</span>
+          <h4>Rodaje del Episodio 01</h4>
+        </div>
+      </div>
+      <div class="gallery-item reveal-up" style="transition-delay:0.07s">
+        <div class="gallery-image"><span class="gallery-placeholder-icon">🎤</span></div>
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-tag">Entrevista</span>
+          <h4>Charla con experto en ciberseguridad</h4>
+        </div>
+      </div>
+      <div class="gallery-item reveal-up" style="transition-delay:0.14s">
+        <div class="gallery-image"><span class="gallery-placeholder-icon">💻</span></div>
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-tag">Proceso</span>
+          <h4>Diseñando la experiencia interactiva</h4>
+        </div>
+      </div>
+      <div class="gallery-item wide reveal-up" style="transition-delay:0.09s">
+        <div class="gallery-image"><span class="gallery-placeholder-icon">🎬</span></div>
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-tag">Making Of</span>
+          <h4>El equipo SeLivre en acción</h4>
+        </div>
+      </div>
+      <div class="gallery-item reveal-up" style="transition-delay:0.16s">
+        <div class="gallery-image"><span class="gallery-placeholder-icon">🔐</span></div>
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-tag">Foto</span>
+          <h4>Escena clave: la contraseña</h4>
+        </div>
+      </div>
+      <div class="gallery-item reveal-up" style="transition-delay:0.2s">
+        <div class="gallery-image"><span class="gallery-placeholder-icon">🎤</span></div>
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-tag">Entrevista</span>
+          <h4>Estudiantes opinan sobre privacidad</h4>
+        </div>
+      </div>
+      <div class="gallery-item reveal-up" style="transition-delay:0.24s">
+        <div class="gallery-image"><span class="gallery-placeholder-icon">📱</span></div>
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-tag">Making Of</span>
+          <h4>Grabación de contenido para RRSS</h4>
+        </div>
+      </div>
+      <div class="gallery-item reveal-up" style="transition-delay:0.28s">
+        <div class="gallery-image"><span class="gallery-placeholder-icon">🎧</span></div>
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-tag">Proceso</span>
+          <h4>Sesión de grabación del podcast</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Si fuiste estafado ═══ -->
+<section id="emergencia">
+  <div class="container">
+    <div class="em-hero reveal-up">
+      <div class="em-alarm">Línea de acción inmediata</div>
+      <h2 class="em-title">¿Te han <em>estafado</em>?<br>Actúa ahora mismo.</h2>
+      <p class="em-subtitle">Cada minuto cuenta. Cuanto antes actúes, mayores son las posibilidades de recuperar tu dinero y evitar daños mayores. Sigue estos pasos en orden.</p>
+    </div>
+    <div class="em-timeline">
+      <!-- PASO 1 -->
+      <div class="em-step priority-1 reveal-left">
+        <div class="em-step-header">
+          <div>
+            <div class="em-step-num">PASO 01</div>
+            <div class="em-step-urgency">⚡ Hazlo ahora mismo: primeros 30 minutos</div>
+          </div>
+          <div class="em-step-icon">🏦</div>
+        </div>
+        <h3 class="em-step-title">Llama a tu banco<br>de inmediato</h3>
+        <p class="em-step-body">Esta es la acción más crítica. Los bancos pueden bloquear transacciones fraudulentas en curso, congelar tu cuenta para evitar más cargos y, en muchos casos, revertir transferencias recientes si actúas con suficiente rapidez.</p>
+        <div class="em-step-actions">
+          <a class="em-action-item" href="tel:091">
+            <div class="ea-icon">📞</div>
+            <div class="ea-text"><strong>Llama al número en el reverso de tu tarjeta</strong><span>Indica que has sido víctima de fraude, tienen protocolos de emergencia 24/7</span></div>
+            <div class="ea-contact">URGENTE</div>
+            <div class="ea-arrow">→</div>
+          </a>
+          <a class="em-action-item" href="https://www.bde.es/wbe/es/entidades-profesionales/supervision-y-regulacion/reclamaciones-incidencias-e-infracciones/reclamaciones/" target="_blank" rel="noopener">
+            <div class="ea-icon">🔒</div>
+            <div class="ea-text"><strong>Pide el bloqueo de tarjetas y cuentas comprometidas</strong><span>Bloquea también el acceso online hasta que el banco confirme tu identidad</span></div>
+            <div class="ea-arrow">→</div>
+          </a>
+          <a class="em-action-item">
+            <div class="ea-icon">📝</div>
+            <div class="ea-text"><strong>Solicita un número de referencia del caso</strong><span>Lo necesitarás para la denuncia policial y el proceso de reclamación</span></div>
+            <div class="ea-arrow">→</div>
+          </a>
+        </div>
+      </div>
+      <!-- PASO 2 -->
+      <div class="em-step priority-2 reveal-right">
+        <div class="em-step-header">
+          <div>
+            <div class="em-step-num" style="color:var(--accent4);background:rgba(245,158,11,0.1)">PASO 02</div>
+            <div class="em-step-urgency" style="color:var(--accent4)">⏱ Primeras 24 horas</div>
+          </div>
+          <div class="em-step-icon">🚔</div>
+        </div>
+        <h3 class="em-step-title">Denuncia ante la<br>Policía o Guardia Civil</h3>
+        <p class="em-step-body">Presentar una denuncia oficial es fundamental. Muchos bancos y seguros requieren una copia de la denuncia policial para tramitar reclamaciones.</p>
+        <div class="em-step-actions">
+          <a class="em-action-item">
+            <div class="ea-icon">👮</div>
+            <div class="ea-text"><strong>Policía Nacional: Delitos Informáticos</strong><span>Puedes denunciar también online en: policia.es</span></div>
+            <div class="ea-contact amber">091</div>
+            <div class="ea-arrow">→</div>
+          </a>
+          <a class="em-action-item">
+            <div class="ea-icon">🪖</div>
+            <div class="ea-text"><strong>Guardia Civil: Grupo de Delitos Telemáticos</strong><span>GDT: tu.guardia.civil.es también admite denuncia online</span></div>
+            <div class="ea-contact amber">062</div>
+            <div class="ea-arrow">→</div>
+          </a>
+          <a class="em-action-item">
+            <div class="ea-icon">🌐</div>
+            <div class="ea-text"><strong>Guarda todas las evidencias antes</strong><span>Capturas de pantalla, correos, SMS, números de teléfono, URLs, no borres nada</span></div>
+            <div class="ea-arrow">→</div>
+          </a>
+        </div>
+      </div>
+      <!-- PASO 3 -->
+      <div class="em-step priority-3 reveal-left">
+        <div class="em-step-header">
+          <div>
+            <div class="em-step-num" style="color:var(--accent3);background:rgba(139,92,246,0.1)">PASO 03</div>
+            <div class="em-step-urgency" style="color:var(--accent3)">🛡 Primeras 48 horas</div>
+          </div>
+          <div class="em-step-icon">📡</div>
+        </div>
+        <h3 class="em-step-title">Contacta con el INCIBE<br>y reporta en plataformas</h3>
+        <p class="em-step-body">El Instituto Nacional de Ciberseguridad ofrece asistencia gratuita a particulares víctimas de ciberdelitos. También debes reportar en la plataforma donde ocurrió la estafa.</p>
+        <div class="em-step-actions">
+          <a class="em-action-item">
+            <div class="ea-icon">🔷</div>
+            <div class="ea-text"><strong>INCIBE: Línea de Ayuda en Ciberseguridad</strong><span>Gratuita, confidencial, disponible todos los días del año</span></div>
+            <div class="ea-contact violet">017</div>
+            <div class="ea-arrow">→</div>
+          </a>
+          <a class="em-action-item">
+            <div class="ea-icon">💬</div>
+            <div class="ea-text"><strong>WhatsApp INCIBE</strong><span>También puedes escribir al 900 116 117</span></div>
+            <div class="ea-contact violet">WhatsApp</div>
+            <div class="ea-arrow">→</div>
+          </a>
+          <a class="em-action-item">
+            <div class="ea-icon">📲</div>
+            <div class="ea-text"><strong>Reporta en la plataforma donde ocurrió</strong><span>Facebook, Instagram, WhatsApp, Amazon… tienen formularios de fraude específicos</span></div>
+            <div class="ea-arrow">→</div>
+          </a>
+        </div>
+      </div>
+      <!-- PASO 4 -->
+      <div class="em-step priority-4 reveal-right">
+        <div class="em-step-header">
+          <div>
+            <div class="em-step-num" style="color:var(--success);background:rgba(16,217,160,0.08)">PASO 04</div>
+            <div class="em-step-urgency" style="color:var(--success)">🔐 Esta semana</div>
+          </div>
+          <div class="em-step-icon">🔑</div>
+        </div>
+        <h3 class="em-step-title">Asegura tus cuentas<br>y limita el daño futuro</h3>
+        <p class="em-step-body">Una vez controlada la emergencia inmediata, debes reforzar la seguridad de todas tus cuentas. Si los estafadores obtuvieron alguna contraseña, pueden usarla en otros servicios donde tengas la misma clave.</p>
+        <div class="em-step-actions">
+          <a class="em-action-item" href="https://haveibeenpwned.com/" target="_blank" rel="noopener">
+            <div class="ea-icon">🔄</div>
+            <div class="ea-text"><strong>Cambia contraseñas de correo, redes y banca</strong><span>Comprueba también si tu email está en filtraciones en haveibeenpwned.com</span></div>
+            <div class="ea-contact green">PRIORITARIO</div>
+            <div class="ea-arrow">→</div>
+          </a>
+          <a class="em-action-item">
+            <div class="ea-icon">🔐</div>
+            <div class="ea-text"><strong>Activa la verificación en dos pasos (2FA)</strong><span>En todas las cuentas que lo permitan, especialmente banca y correo</span></div>
+            <div class="ea-arrow">→</div>
+          </a>
+          <a class="em-action-item">
+            <div class="ea-icon">👁</div>
+            <div class="ea-text"><strong>Revisa tus extractos bancarios periódicamente</strong><span>Los estafadores a veces esperan semanas antes de hacer cargos adicionales</span></div>
+            <div class="ea-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Footer ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4><span style="color:var(--accent)">{</span>SeLivre<span style="color:var(--accent)">}</span></h4>
+        <p>Un proyecto transmedia de alfabetización digital. Porque la seguridad no limita, libera. Creado como proyecto universitario para demostrar que la ciberseguridad puede ser cercana, narrativa y participativa.</p>
+      </div>
+      <div class="footer-links-col">
+        <h5>Secciones</h5>
+        <ul>
+          <li><a href="#que-es">¿Qué es el phishing?</a></li>
+          <li><a href="#podcast">Podcast</a></li>
+          <li><a href="#senales">Señales de alarma</a></li>
+          <li><a href="#quiz">Test de seguridad</a></li>
+          <li><a href="#gallery">Galería multimedia</a></li>
         </ul>
-        
-        <div class="simulator-results" id="simResults">
-          <div class="result-score" id="resultScore">0/6</div>
-          <p class="result-message" id="resultMessage"></p>
-          <div class="result-details">
-            <div class="result-stat">
-              <span class="result-stat-val green" id="resultCorrect">0</span>
-              <span class="result-stat-label">Correctas</span>
-            </div>
-            <div class="result-stat">
-              <span class="result-stat-val red" id="resultWrong">0</span>
-              <span class="result-stat-label">Incorrectas</span>
-            </div>
-          </div>
-          <button class="btn-reset" id="simResetBtn">↻ Reintentar</button>
-        </div>
+      </div>
+      <div class="footer-links-col">
+        <h5>Emergencia</h5>
+        <ul>
+          <li><a href="#emergencia">Guía de acción urgente</a></li>
+          <li><a href="#emergencia">INCIBE: 017</a></li>
+          <li><a href="#emergencia">Policía Nacional: 091</a></li>
+          <li><a href="#emergencia">Guardia Civil: 062</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <!-- ═══ Gallery Section ═══ -->
-  <section class="gallery" id="gallery">
-    <div class="container">
-      <span class="section-label reveal">Galería multimedia</span>
-      <h2 class="section-title reveal">Detrás de<br><span style="color: var(--accent-green)">las cámaras</span></h2>
-      <p class="section-desc reveal">Fotos del proceso, mini-entrevistas con el equipo, y momentos del making-of que dan vida a SeLivre.</p>
-      
-      <div class="gallery-grid reveal">
-        <div class="gallery-item tall">
-          <div class="gallery-image">
-            <span class="gallery-placeholder-icon">📸</span>
-          </div>
-          <div class="gallery-overlay">
-            <span class="gallery-overlay-tag">Making Of</span>
-            <h4>Rodaje del Episodio 01</h4>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-image">
-            <span class="gallery-placeholder-icon">🎤</span>
-          </div>
-          <div class="gallery-overlay">
-            <span class="gallery-overlay-tag">Entrevista</span>
-            <h4>Charla con experto en ciberseguridad</h4>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-image">
-            <span class="gallery-placeholder-icon">💻</span>
-          </div>
-          <div class="gallery-overlay">
-            <span class="gallery-overlay-tag">Proceso</span>
-            <h4>Diseñando la experiencia interactiva</h4>
-          </div>
-        </div>
-        <div class="gallery-item wide">
-          <div class="gallery-image">
-            <span class="gallery-placeholder-icon">🎬</span>
-          </div>
-          <div class="gallery-overlay">
-            <span class="gallery-overlay-tag">Making Of</span>
-            <h4>El equipo SeLivre en acción</h4>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-image">
-            <span class="gallery-placeholder-icon">🔐</span>
-          </div>
-          <div class="gallery-overlay">
-            <span class="gallery-overlay-tag">Foto</span>
-            <h4>Escena clave: la contraseña</h4>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-image">
-            <span class="gallery-placeholder-icon">🎤</span>
-          </div>
-          <div class="gallery-overlay">
-            <span class="gallery-overlay-tag">Entrevista</span>
-            <h4>Estudiantes opinan sobre privacidad</h4>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-image">
-            <span class="gallery-placeholder-icon">📱</span>
-          </div>
-          <div class="gallery-overlay">
-            <span class="gallery-overlay-tag">Making Of</span>
-            <h4>Grabación de contenido para RRSS</h4>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-image">
-            <span class="gallery-placeholder-icon">🎧</span>
-          </div>
-          <div class="gallery-overlay">
-            <span class="gallery-overlay-tag">Proceso</span>
-            <h4>Sesión de grabación del podcast</h4>
-          </div>
-        </div>
-      </div>
+    <div class="footer-bottom">
+      <span>© 2026 SeLivre · Proyecto universitario de contenido transmedia</span>
+      <span style="color:var(--accent);letter-spacing:0.12em">SEGURO. ALERTA. PROTEGIDO.</span>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- ═══ Transmedia Section ═══ -->
-  <section class="transmedia" id="transmedia">
-    <div class="container">
-      <span class="section-label reveal">Extensión transmedia</span>
-      <h2 class="section-title reveal">Más allá de<br><span style="color: var(--accent-green)">la web</span></h2>
-      <p class="section-desc reveal">La narrativa de SeLivre se expande hacia las redes sociales, traduciendo la ciberseguridad al lenguaje de las tendencias, clips rápidos y contenido visual de impacto.</p>
-      
-      <!-- Platform Cards -->
-      <div class="transmedia-platforms">
-        <div class="platform-card tiktok reveal reveal-delay-1">
-          <span class="platform-icon">🎵</span>
-          <h3>TikTok</h3>
-          <p>Conceptos de seguridad informática traducidos al lenguaje de tendencias. Clips rápidos, ganchos visuales y contenido que se queda contigo.</p>
-          <ul class="platform-strategy">
-            <li>Duetos con "red flags" digitales</li>
-            <li>Trend hijacking con mensajes de seguridad</li>
-            <li>POVs narrativos: "Cuando abres ese link sospechoso…"</li>
-            <li>Tips express de ciberseguridad en 30s</li>
-          </ul>
-        </div>
-        <div class="platform-card instagram reveal reveal-delay-2">
-          <span class="platform-icon">📷</span>
-          <h3>Instagram</h3>
-          <p>Contenido educativo y estético que refuerza los conceptos de la web. Carruseles, stories interactivas y reels con datos que impactan.</p>
-          <ul class="platform-strategy">
-            <li>Carruseles infográficos sobre huella digital</li>
-            <li>Stories con encuestas y quizzes de seguridad</li>
-            <li>Reels Behind-The-Scenes del proyecto</li>
-            <li>Colaboraciones con cuentas tech</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 8 Content Pieces -->
-      <h3 class="transmedia-content-heading reveal">
-        <span style="color: var(--accent-cyan)">8 piezas</span> de contenido social
-      </h3>
-      
-      <div class="content-grid">
-        <div class="content-piece reveal reveal-delay-1">
-          <div class="content-preview">
-            <span class="content-type-badge reel">Reel</span>
-            <span class="content-preview-icon">🎬</span>
-            <span class="content-caption">"Tu contraseña '1234' en 0.3 segundos"</span>
-          </div>
-        </div>
-        <div class="content-piece reveal reveal-delay-1">
-          <div class="content-preview">
-            <span class="content-type-badge story">Story</span>
-            <span class="content-preview-icon">📊</span>
-            <span class="content-caption">Encuesta: ¿Cambias tus contraseñas?</span>
-          </div>
-        </div>
-        <div class="content-piece reveal reveal-delay-2">
-          <div class="content-preview">
-            <span class="content-type-badge carousel-badge">Carrusel</span>
-            <span class="content-preview-icon">📱</span>
-            <span class="content-caption">5 señales de un email phishing</span>
-          </div>
-        </div>
-        <div class="content-piece reveal reveal-delay-2">
-          <div class="content-preview">
-            <span class="content-type-badge reel">Reel</span>
-            <span class="content-preview-icon">🎭</span>
-            <span class="content-caption">POV: Conectas a WiFi en el aeropuerto</span>
-          </div>
-        </div>
-        <div class="content-piece reveal reveal-delay-3">
-          <div class="content-preview">
-            <span class="content-type-badge post">Post</span>
-            <span class="content-preview-icon">🔒</span>
-            <span class="content-caption">Infografía: ¿Qué es la 2FA?</span>
-          </div>
-        </div>
-        <div class="content-piece reveal reveal-delay-3">
-          <div class="content-preview">
-            <span class="content-type-badge story">Story</span>
-            <span class="content-preview-icon">🧪</span>
-            <span class="content-caption">Quiz: ¿Sabrías detectar el fraude?</span>
-          </div>
-        </div>
-        <div class="content-piece reveal reveal-delay-4">
-          <div class="content-preview">
-            <span class="content-type-badge reel">Reel</span>
-            <span class="content-preview-icon">📦</span>
-            <span class="content-caption">Unboxing: Lo que sabe Google de ti</span>
-          </div>
-        </div>
-        <div class="content-piece reveal reveal-delay-4">
-          <div class="content-preview">
-            <span class="content-type-badge carousel-badge">Carrusel</span>
-            <span class="content-preview-icon">🛡️</span>
-            <span class="content-caption">Guía rápida: Protege tu móvil en 5 min</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Participation Mechanic -->
-      <div class="participation reveal">
-        <div class="participation-header">
-          <span class="section-label" style="justify-content: center;">Mecánica de participación</span>
-          <h3>¿Sabrías detectar el phishing?</h3>
-          <p>Un reto rápido de 5 preguntas diseñado para compartir en redes. Pon a prueba tus conocimientos y desafía a tus amigos.</p>
-        </div>
-        
-        <div class="quiz-container" id="quizContainer">
-          <div class="quiz-progress" id="quizProgress">
-            <div class="quiz-progress-dot current"></div>
-            <div class="quiz-progress-dot"></div>
-            <div class="quiz-progress-dot"></div>
-            <div class="quiz-progress-dot"></div>
-            <div class="quiz-progress-dot"></div>
-          </div>
-          
-          <div id="quizQuestions">
-            <!-- Questions generated by JS -->
-          </div>
-          
-          <div class="quiz-results" id="quizResults">
-            <div class="quiz-results-score" id="quizScore">0/5</div>
-            <p class="quiz-results-msg" id="quizMsg"></p>
-            <p class="quiz-results-share">📲 ¡Haz captura y comparte tu resultado en Instagram o TikTok con #SeLivreChallenge!</p>
-            <div class="quiz-results-btns">
-              <button class="btn-reset" id="quizResetBtn">↻ Reintentar</button>
-              <button class="hero-cta" style="opacity:1; animation:none; font-size:0.8rem; padding: 10px 20px;" onclick="window.open('https://twitter.com/intent/tweet?text=He%20conseguido%20' + document.getElementById('quizScore').textContent + '%20en%20el%20reto%20%23SeLivreChallenge%20%F0%9F%9B%A1%EF%B8%8F%20%C2%BFTe%20atreves%3F','_blank')">Compartir resultado</button>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- Modal Vídeo -->
+<div class="modal-overlay" id="videoModal">
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <h3 id="modalTitle">Reproductor de vídeo</h3>
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
     </div>
-  </section>
-
-  <!-- ═══ Footer ═══ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h4><span style="color: var(--accent-green)">{</span>SeLivre<span style="color: var(--accent-green)">}</span></h4>
-          <p>Un proyecto transmedia de alfabetización digital. Porque la seguridad no limita, libera. Creado como proyecto universitario para demostrar que la ciberseguridad puede ser cercana, narrativa y participativa.</p>
-        </div>
-        <div class="footer-links">
-          <h5>Secciones</h5>
-          <ul>
-            <li><a href="#about">Sobre el proyecto</a></li>
-            <li><a href="#videos">Vídeos</a></li>
-            <li><a href="#podcast">Podcast</a></li>
-            <li><a href="#simulator">Simulador</a></li>
-            <li><a href="#gallery">Galería</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h5>Redes Sociales</h5>
-          <ul>
-            <li><a href="#" target="_blank">TikTok @selivre</a></li>
-            <li><a href="#" target="_blank">Instagram @selivre</a></li>
-            <li><a href="#transmedia">Extensión transmedia</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 SeLivre · Proyecto universitario de contenido transmedia</p>
-        <p>Hecho con 🛡️ y mucho ☕</p>
-      </div>
+    <div class="modal-video-ph">
+      <div style="font-size:2.5rem;margin-bottom:1rem">🎬</div>
+      <div>Inserta aquí tu vídeo</div>
+      <div style="font-size:0.78rem;color:var(--text2);margin-top:0.4rem">Usa un elemento &lt;iframe&gt; con tu URL de YouTube, Vimeo o vídeo alojado</div>
+      <div id="modalHint" style="margin-top:0.8rem;font-family:var(--ff-mono);font-size:0.67rem;color:var(--accent3);background:rgba(139,92,246,0.08);padding:0.4rem 0.8rem;border-radius:3px;border:1px solid rgba(139,92,246,0.2)"></div>
     </div>
-  </footer>
+    <div class="modal-code-hint">
+      💡 Para incrustar YouTube: &lt;iframe src="https://www.youtube.com/embed/TU_VIDEO_ID" allowfullscreen width="100%" height="100%"&gt;&lt;/iframe&gt;
+    </div>
+  </div>
+</div>
 
-  <script src="scripts.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
