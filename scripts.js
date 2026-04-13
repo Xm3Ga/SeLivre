@@ -122,20 +122,25 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
    MODAL VÍDEO
    ═══════════════════════════════════════ */
 const modalTitles = {
-  v1: 'Cómo funciona un ataque de phishing  paso a paso',
-  v2: 'Estafas reales: cómo engañaron a personas como tú',
+  v1: 'El tamaño SÍ importa: contraseñas largas y seguras',
+  v2: 'DeepFakes: qué son y cómo detectarlos',
 };
-const modalHints = {
-  v1: '// Vídeo 1: Fundamentos del phishing (8 min)',
-  v2: '// Vídeo 2: Casos reales documentados (12 min)',
+const videoSources = {
+  v1: 'media/MiGatoGordoOdiaLosLunes.mp4',
+  v2: 'media/deepfake.mp4',
 };
 function openModal(id) {
   document.getElementById('modalTitle').textContent = modalTitles[id] || '';
-  document.getElementById('modalHint').textContent  = modalHints[id] || '';
+  const video = document.getElementById('modalVideo');
+  video.src = videoSources[id] || '';
+  video.load();
   document.getElementById('videoModal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 function closeModal() {
+  const video = document.getElementById('modalVideo');
+  video.pause();
+  video.removeAttribute('src');
   document.getElementById('videoModal').classList.remove('open');
   document.body.style.overflow = '';
 }
@@ -147,10 +152,20 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 /* ═══════════════════════════════════════
    REPRODUCTOR DE AUDIO
    ═══════════════════════════════════════ */
-let isPlaying = false, curSec = 0, totSec = 323, speedIdx = 0;
+let isPlaying = false, curSec = 0, totSec = 344, speedIdx = 0;
 const speeds = [1, 1.25, 1.5, 2];
 const audio  = document.getElementById('mainAudio');
 let audioInt;
+
+audio.addEventListener('loadedmetadata', () => {
+  if (audio.duration && isFinite(audio.duration)) {
+    totSec = Math.floor(audio.duration);
+    const m = Math.floor(totSec / 60);
+    const s = Math.floor(totSec % 60).toString().padStart(2, '0');
+    const el = document.getElementById('totalTime');
+    if (el) el.textContent = m + ':' + s;
+  }
+});
 
 function togglePlay() {
   isPlaying = !isPlaying;
